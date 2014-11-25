@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">RentAMovie</string>
+    <string name="app_name">Interaje Filmes</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="request_title">Requesting to Internet!</string>
+    <string name="request_message">Requesting informations from Internet, please wait!</string>
 
 </resources>
