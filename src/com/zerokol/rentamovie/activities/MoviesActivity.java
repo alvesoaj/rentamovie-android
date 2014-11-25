@@ -9,7 +9,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -31,10 +30,6 @@ public class MoviesActivity extends ActionBarActivity {
 		RequestMoviesAsyncTask requestMovieTask = new RequestMoviesAsyncTask(
 				this);
 		requestMovieTask.execute();
-
-		movieDataAccessObject.open();
-		Log.w("rentAMovie", movieDataAccessObject.selectAll().size() + "");
-		movieDataAccessObject.close();
 	}
 
 	@Override
