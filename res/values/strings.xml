@@ -6,5 +6,8 @@
     <string name="action_settings">Settings</string>
     <string name="request_title">Requesting to Internet!</string>
     <string name="request_message">Requesting informations from Internet, please wait!</string>
+    <string name="fragment_image_select_image">Select an Image</string>
+    <string name="action_select_image_from_archive">From Archive</string>
+    <string name="action_select_image_from_camera">From Camera</string>
 
 </resources>

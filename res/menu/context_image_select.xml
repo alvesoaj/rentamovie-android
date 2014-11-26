@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.cajuinalabs.ProgramsActivity" >
+
+    <item
+        android:id="@+id/context_image_select_from_archive"
+        android:orderInCategory="1"
+        android:title="@string/action_select_image_from_archive"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/context_image_select_from_camera"
+        android:orderInCategory="2"
+        android:title="@string/action_select_image_from_camera"
+        app:showAsAction="never"/>
+
+</menu>
