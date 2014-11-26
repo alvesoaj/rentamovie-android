@@ -28,7 +28,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 public class RentAMovieHelper {
-	public static final String DOMAIN = "https://rentamovie.herokuapp.com";
+	public static final String DOMAIN = "http://rentamovie.herokuapp.com";
 
 	public static String getFormatedData(Date date) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ",

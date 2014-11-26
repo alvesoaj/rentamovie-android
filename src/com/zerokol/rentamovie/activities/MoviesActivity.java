@@ -96,27 +96,27 @@ public class MoviesActivity extends ActionBarActivity {
 				if (jsonArray != null) {
 					movieDataAccessObject.open();
 					for (int i = 0; i < jsonArray.length(); i++) {
-						JSONObject stationJson = jsonArray.getJSONObject(i);
+						JSONObject movieJson = jsonArray.getJSONObject(i);
 						Movie movie = movieDataAccessObject
-								.selectById(stationJson
+								.selectById(movieJson
 										.getInt(MovieDAO.TABLE_ID));
 
 						if (movie == null) {
 							movie = new Movie();
 
-							movie.setId(stationJson.getInt(MovieDAO.TABLE_ID));
-							movie.setName(stationJson
+							movie.setId(movieJson.getInt(MovieDAO.TABLE_ID));
+							movie.setName(movieJson
 									.getString(MovieDAO.TABLE_NAME));
-							movie.setDescription(stationJson
+							movie.setDescription(movieJson
 									.getString(MovieDAO.TABLE_DESCRIPTION));
-							movie.setImage(stationJson
+							movie.setImage(movieJson
 									.getJSONObject(MovieDAO.TABLE_IMAGE)
 									.getJSONObject("medium").getString("url"));
-							movie.setQuantity(stationJson
+							movie.setQuantity(movieJson
 									.getInt(MovieDAO.TABLE_QUANTITY));
-							movie.setCreatedAt(RentAMovieHelper.convertStringDateToDate(stationJson
+							movie.setCreatedAt(RentAMovieHelper.convertStringDateToDate(movieJson
 									.getString(MovieDAO.TABLE_CREATED_AT)));
-							movie.setUpdatedAt(RentAMovieHelper.convertStringDateToDate(stationJson
+							movie.setUpdatedAt(RentAMovieHelper.convertStringDateToDate(movieJson
 									.getString(MovieDAO.TABLE_UPDATED_AT)));
 
 							movieDataAccessObject.create(movie);
@@ -125,19 +125,19 @@ public class MoviesActivity extends ActionBarActivity {
 									.getUpdatedAt()
 									.compareTo(
 											RentAMovieHelper
-													.convertStringDateToDate(stationJson
+													.convertStringDateToDate(movieJson
 															.getString(MovieDAO.TABLE_UPDATED_AT))) != 0) {
-								movie.setName(stationJson
+								movie.setName(movieJson
 										.getString(MovieDAO.TABLE_NAME));
-								movie.setDescription(stationJson
+								movie.setDescription(movieJson
 										.getString(MovieDAO.TABLE_DESCRIPTION));
-								movie.setImage(stationJson
+								movie.setImage(movieJson
 										.getJSONObject(MovieDAO.TABLE_IMAGE)
 										.getJSONObject("medium")
 										.getString("url"));
-								movie.setQuantity(stationJson
+								movie.setQuantity(movieJson
 										.getInt(MovieDAO.TABLE_QUANTITY));
-								movie.setUpdatedAt(RentAMovieHelper.convertStringDateToDate(stationJson
+								movie.setUpdatedAt(RentAMovieHelper.convertStringDateToDate(movieJson
 										.getString(MovieDAO.TABLE_UPDATED_AT)));
 
 								movieDataAccessObject.update(movie);
