@@ -57,6 +57,17 @@ public class MovieFormActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_movie_form);
 
+		// Verificando se ha algo salvo no Bundle
+		if (savedInstanceState != null) {
+			if (savedInstanceState.containsKey("cameraImageUri")) {
+				// Se houver, recarregar a imagem
+				imageUri = Uri.parse(savedInstanceState
+						.getString("cameraImageUri"));
+
+				loadImageFromArchive(imageUri);
+			}
+		}
+
 		movieDataAccessObject = new MovieDAO(this);
 
 		send.setOnClickListener(new OnClickListener() {
@@ -67,6 +78,16 @@ public class MovieFormActivity extends ActionBarActivity {
 				createMovieTask.execute();
 			}
 		});
+	}
+
+	@Override
+	public void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		// Salvando o path da imagem sempre que o ciclo de vida da activity
+		// resetar
+		if (imageUri != null) {
+			outState.putString("cameraImageUri", imageUri.toString());
+		}
 	}
 
 	@Override
