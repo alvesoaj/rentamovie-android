@@ -27,9 +27,9 @@ public class MoviesActivity extends ActionBarActivity {
 
 		movieDataAccessObject = new MovieDAO(this);
 
-		RequestMoviesAsyncTask requestMovieTask = new RequestMoviesAsyncTask(
+		RequestMoviesAsyncTask requestMoviesTask = new RequestMoviesAsyncTask(
 				this);
-		requestMovieTask.execute();
+		requestMoviesTask.execute();
 	}
 
 	@Override
@@ -98,8 +98,7 @@ public class MoviesActivity extends ActionBarActivity {
 					for (int i = 0; i < jsonArray.length(); i++) {
 						JSONObject movieJson = jsonArray.getJSONObject(i);
 						Movie movie = movieDataAccessObject
-								.selectById(movieJson
-										.getInt(MovieDAO.TABLE_ID));
+								.selectById(movieJson.getInt(MovieDAO.TABLE_ID));
 
 						if (movie == null) {
 							movie = new Movie();
